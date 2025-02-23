@@ -11,7 +11,7 @@ const Shorts = ({ color }) => {
   });
 
   return (
-    <mesh ref={meshRef} scale={[1, 0.8, 1]}>
+    <mesh ref={meshRef} scale={[1.2, 1, 1]}>
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={color} />
     </mesh>
