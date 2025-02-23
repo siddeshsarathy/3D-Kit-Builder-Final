@@ -11,8 +11,8 @@ const Stockings = ({ color }) => {
   });
 
   return (
-    <mesh ref={meshRef} scale={[0.5, 1.5, 0.5]}>
-      <cylinderGeometry args={[0.3, 0.3, 1.5, 32]} />
+    <mesh ref={meshRef} scale={[0.5, 2, 0.5]}>
+      <cylinderGeometry args={[0.3, 0.3, 2, 32]} />
       <meshStandardMaterial color={color} />
     </mesh>
   );
