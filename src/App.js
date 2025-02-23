@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Jersey from "./components/Jersey";
@@ -10,6 +10,19 @@ const App = () => {
   const [jerseyColor, setJerseyColor] = useState("#ff0000");
   const [shortsColor, setShortsColor] = useState("#000000");
   const [stockingsColor, setStockingsColor] = useState("#ffffff");
+  const [webGLSupported, setWebGLSupported] = useState(true);
+
+  useEffect(() => {
+    const canvas = document.createElement("canvas");
+    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    if (!gl) {
+      setWebGLSupported(false);
+    }
+  }, []);
+
+  if (!webGLSupported) {
+    return <h1>⚠️ WebGL is not supported on your browser or device. Please try another browser.</h1>;
+  }
 
   return (
     <div className="container">
