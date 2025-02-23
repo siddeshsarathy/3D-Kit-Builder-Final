@@ -11,8 +11,8 @@ const Jersey = ({ color }) => {
   });
 
   return (
-    <mesh ref={meshRef} scale={[1.2, 1.5, 1]}>
-      <sphereGeometry args={[1, 32, 32]} />
+    <mesh ref={meshRef} scale={[1.5, 2, 1]}>
+      <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={color} />
     </mesh>
   );
